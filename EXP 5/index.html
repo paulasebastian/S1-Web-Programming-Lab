@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Web Gallery</h1>
+        <p>Click on any image to launch the slideshow</p>
+    </header>
+
+    <!-- Image Grid Container -->
+    <main class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Beautiful landscape" onclick="openModal(0)">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600" alt="Mountain lake" onclick="openModal(1)">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Green forest" onclick="openModal(2)">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600" alt="Sunrise landscape" onclick="openModal(3)">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600" alt="Mountain scenery" onclick="openModal(4)">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Snowy mountains" onclick="openModal(5)">
+    </main>
+
+    <!-- Slideshow Modal Overlay -->
+    <div id="modalViewer" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        
+        <button class="nav-btn prev-btn" onclick="navigateSlide(-1)">&#10094;</button>
+        <img id="modalImage" src="" alt="Enlarged view">
+        <button class="nav-btn next-btn" onclick="navigateSlide(1)">&#10095;</button>
+        
+        <div id="imageCaption"></div>
+        <button id="autoPlayBtn" onclick="togglePlay()">Start Auto-Play</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

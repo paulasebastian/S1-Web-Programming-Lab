@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --black: #111;
+  --paper: #f2f0e8;
+  --yellow: #e8ff37;
+  --pink: #ff4f8b;
+  --blue: #5c63ff;
+  --gray: #777;
+}
+body {
+  font-family: Manrope, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--black);
+  line-height: 1.55;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: min(1180px, calc(100% - 44px));
+  margin: auto;
+}
+
+/* ONE COMMON HEADER — intentionally designed like a label, not a standard navbar */
+.site-header {
+  background: var(--black);
+  color: white;
+  border-bottom: 4px solid var(--yellow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar {
+  max-width: 1180px;
+  margin: auto;
+  min-height: 72px;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.logo {
+  font-family: "Archivo Black";
+  font-size: 1.25rem;
+  letter-spacing: -1px;
+}
+.logo span {
+  color: var(--yellow);
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3px;
+  justify-content: center;
+}
+.nav-menu a {
+  font-family: "DM Mono";
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  color: #aaa;
+  letter-spacing: 0.8px;
+}
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--black);
+  background: var(--yellow);
+}
+.header-mark {
+  justify-self: end;
+  font-family: "DM Mono";
+  font-size: 0.65rem;
+  color: #777;
+}
+
+/* HOME — bold poster / brutalist */
+.home {
+  background: var(--paper);
+}
+.hero {
+  min-height: 700px;
+  padding: 70px 0 55px;
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 35px;
+  position: relative;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.issue {
+  font-family: "DM Mono";
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: "Archivo Black";
+  font-size: clamp(4rem, 10vw, 9.5rem);
+  line-height: 0.79;
+  letter-spacing: -7px;
+  text-transform: uppercase;
+}
+.hero h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+}
+.hero h1 .accent {
+  background: var(--yellow);
+  display: inline;
+  padding: 0 8px;
+}
+.hero-copy {
+  max-width: 610px;
+  margin-top: 35px;
+  font-size: 1rem;
+}
+.hero-copy strong {
+  font-weight: 800;
+}
+.side-poster {
+  background: var(--black);
+  color: white;
+  min-height: 530px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotate(2deg);
+  box-shadow: 12px 12px 0 var(--pink);
+}
+.photo {
+  height: 310px;
+  background: #303030;
+  border: 2px solid white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #888;
+  font-family: "DM Mono";
+  font-size: 0.75rem;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.poster-bottom {
+  font-family: "DM Mono";
+  font-size: 0.72rem;
+  line-height: 1.8;
+}
+.poster-bottom b {
+  color: var(--yellow);
+}
+.home-strip {
+  border-top: 3px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  padding: 13px 0;
+  font-family: "DM Mono";
+  font-size: 0.68rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* PROJECTS — masonry/cutout gallery */
+.projects {
+  background: #171717;
+  color: white;
+  min-height: 100vh;
+}
+.projects .site-header {
+  background: #171717;
+}
+.project-intro {
+  padding: 65px 0 30px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+.project-intro h1 {
+  font-family: "Archivo Black";
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.8;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+}
+.project-intro p {
+  max-width: 370px;
+  color: #aaa;
+  font-size: 0.88rem;
+}
+.masonry {
+  padding: 30px 0 90px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+.work {
+  background: #242424;
+  border: 1px solid #3b3b3b;
+  padding: 26px;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.work.big {
+  min-height: 580px;
+  grid-row: span 2;
+  background: var(--yellow);
+  color: var(--black);
+  border: 0;
+}
+.work.pink {
+  background: var(--pink);
+  color: var(--black);
+  border: 0;
+}
+.work.blue {
+  background: var(--blue);
+  border: 0;
+}
+.work-no {
+  font-family: "DM Mono";
+  font-size: 0.7rem;
+}
+.work h2 {
+  font-family: "Archivo Black";
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  max-width: 500px;
+}
+.work p {
+  font-size: 0.82rem;
+  max-width: 450px;
+  margin-top: 12px;
+}
+.work-meta {
+  font-family: "DM Mono";
+  font-size: 0.65rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid currentColor;
+  padding-top: 12px;
+  margin-top: 22px;
+}
+
+/* CONTACT — giant type / index card */
+.contact {
+  background: #d9f0ff;
+  min-height: 100vh;
+}
+.contact .site-header {
+  background: #d9f0ff;
+  color: var(--black);
+  border-color: var(--black);
+}
+.contact .logo span {
+  color: var(--blue);
+}
+.contact .nav-menu a {
+  color: #555;
+}
+.contact .nav-menu a:hover,
+.contact .nav-menu a.active {
+  background: var(--black);
+  color: white;
+}
+.contact-main {
+  padding: 70px 0 90px;
+}
+.contact-title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  border-bottom: 4px solid var(--black);
+  padding-bottom: 30px;
+  gap: 30px;
+}
+.contact-title h1 {
+  font-family: "Archivo Black";
+  font-size: clamp(4rem, 9vw, 9rem);
+  line-height: 0.78;
+  letter-spacing: -6px;
+  text-transform: uppercase;
+}
+.contact-title p {
+  max-width: 400px;
+  color: #4d5963;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
+  padding-top: 45px;
+}
+.details {
+  border-top: 2px solid var(--black);
+}
+.detail {
+  padding: 17px 0;
+  border-bottom: 1px solid #8799a5;
+}
+.detail small {
+  font-family: "DM Mono";
+  font-size: 0.62rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.detail span,
+.detail a {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.form-box {
+  background: white;
+  border: 3px solid var(--black);
+  padding: 30px;
+  box-shadow: 10px 10px 0 var(--blue);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+label {
+  font-family: "DM Mono";
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+input,
+textarea {
+  font: inherit;
+  border: 0;
+  border-bottom: 2px solid var(--black);
+  padding: 11px 3px;
+  background: #fff;
+  border-radius: 0;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--blue);
+}
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+.send {
+  background: var(--black);
+  color: white;
+  border: 0;
+  padding: 13px 18px;
+  font-family: "DM Mono";
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.send:hover {
+  background: var(--blue);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--black);
+  color: white;
+  padding: 23px;
+}
+.footer-inner {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: "DM Mono";
+  font-size: 0.62rem;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+  color: #aaa;
+}
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+  }
+  .header-mark {
+    display: none;
+  }
+  .nav-menu {
+    grid-column: 1/-1;
+    grid-row: 2;
+    padding-bottom: 10px;
+  }
+  .hero {
+    grid-template-columns: 1fr 260px;
+  }
+  .side-poster {
+    min-height: 450px;
+  }
+  .photo {
+    height: 260px;
+  }
+  .project-intro {
+    align-items: start;
+    flex-direction: column;
+  }
+  .masonry {
+    grid-template-columns: 1fr;
+  }
+  .work.big {
+    grid-row: auto;
+    min-height: 400px;
+  }
+  .contact-title {
+    grid-template-columns: 1fr;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+  .navbar {
+    padding: 12px 15px;
+  }
+  .nav-menu {
+    gap: 0;
+  }
+  .nav-menu a {
+    font-size: 0.62rem;
+    padding: 7px 8px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 55px 0 35px;
+    text-align: left;
+  }
+  .hero h1 {
+    font-size: 4.2rem;
+    letter-spacing: -3px;
+  }
+  .hero-copy {
+    font-size: 0.9rem;
+    margin-top: 25px;
+  }
+  .side-poster {
+    width: 240px;
+    min-height: 390px;
+    margin: 15px auto 10px;
+    transform: rotate(-1deg);
+  }
+  .photo {
+    height: 230px;
+  }
+  .home-strip {
+    font-size: 0.55rem;
+    gap: 10px;
+  }
+  .home-strip span:last-child {
+    display: none;
+  }
+  .project-intro {
+    padding: 55px 0 20px;
+  }
+  .project-intro h1 {
+    font-size: 3.5rem;
+  }
+  .masonry {
+    padding: 20px 0 60px;
+  }
+  .work,
+  .work.big {
+    min-height: 300px !important;
+    padding: 21px;
+  }
+  .work h2 {
+    font-size: 2rem;
+  }
+  .contact-main {
+    padding: 55px 0 65px;
+  }
+  .contact-title h1 {
+    font-size: 4.2rem;
+    letter-spacing: -3px;
+  }
+  .contact-grid {
+    padding-top: 32px;
+    gap: 35px;
+  }
+  .form-box {
+    padding: 22px;
+    box-shadow: 6px 6px 0 var(--blue);
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

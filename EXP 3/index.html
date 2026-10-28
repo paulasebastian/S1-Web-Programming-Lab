@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kera — The Spice Soul of Kerala</title>
+    <meta name="description" content="Discover the colours, aromas and flavours of Kerala through Kera's premium spice collection.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #153c28;
+            --green-light: #315b3c;
+            --cream: #f7f1e5;
+            --gold: #bd914a;
+            --ink: #20271f;
+            --muted: #737469;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            min-height: 84px;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--green);
+            line-height: 1;
+        }
+
+        .logo small {
+            display: block;
+            text-align: center;
+            font: 700 9px 'DM Sans', sans-serif;
+            letter-spacing: 2.5px;
+            margin-top: 6px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 13px;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-button {
+            background: var(--green);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+        }
+
+        /* HERO */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 590px;
+            background: #eee5d1;
+        }
+
+        .hero-content {
+            align-self: center;
+            padding: 70px 8% 70px 13%;
+        }
+
+        .eyebrow {
+            color: #98702e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(44px, 5vw, 68px);
+            letter-spacing: -2px;
+            line-height: 1.08;
+        }
+
+        .hero h1 span {
+            color: var(--green-light);
+            font-style: italic;
+        }
+
+        .hero-content > p {
+            max-width: 420px;
+            margin: 24px 0 30px;
+            color: #5e6257;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 26px;
+            border-radius: 30px;
+            background: var(--green);
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background .2s, transform .2s;
+        }
+
+        .button:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+        }
+
+        .hero-note {
+            margin-top: 32px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #626a5b;
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 590px;
+            background:
+                linear-gradient(0deg, rgba(16, 33, 19, .2), transparent 55%),
+                url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=85")
+                center / cover no-repeat;
+        }
+
+        .image-label {
+            position: absolute;
+            bottom: 30px;
+            right: 7%;
+            width: 220px;
+            padding: 23px;
+            background: var(--cream);
+            box-shadow: 0 12px 35px #0002;
+            transform: rotate(-2deg);
+        }
+
+        .image-label span {
+            color: #99712e;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .image-label h3 {
+            margin: 10px 0;
+            color: var(--green);
+            font-size: 27px;
+        }
+
+        .image-label p {
+            font-size: 12px;
+            line-height: 1.7;
+            color: #66685d;
+        }
+
+        /* BRAND VALUES */
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 27px 9%;
+            background: var(--green);
+            color: var(--cream);
+        }
+
+        .value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            font-size: 12px;
+        }
+
+        .value-icon {
+            font-size: 25px;
+        }
+
+        .value strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        /* SPICE COLLECTION */
+
+        .collection {
+            padding: 90px 9%;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(35px, 4vw, 48px);
+            line-height: 1.2;
+        }
+
+        .section-heading > p {
+            max-width: 350px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .spice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .spice-card {
+            min-width: 0;
+        }
+
+        .spice-image {
+            height: 290px;
+            overflow: hidden;
+            background: #e8dfcc;
+        }
+
+        .spice-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .spice-card:hover .spice-image img {
+            transform: scale(1.06);
+        }
+
+        .spice-info {
+            padding: 20px 0;
+            border-bottom: 1px solid #d4cbb8;
+        }
+
+        .spice-info span {
+            color: #99712e;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .spice-info h3 {
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        .spice-info p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .spice-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* OUR STORY */
+
+        .story {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #e9dfca;
+        }
+
+        .story-image {
+            min-height: 440px;
+            background:
+                url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=85")
+                center / cover no-repeat;
+        }
+
+        .story-content {
+            align-self: center;
+            padding: 65px 12%;
+        }
+
+        .story-content h2 {
+            font-size: clamp(34px, 4vw, 46px);
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .story-content p {
+            margin-bottom: 26px;
+            color: #5e6257;
+            font-size: 14px;
+            line-height: 1.95;
+        }
+
+        /* FINAL CTA */
+
+        .cta {
+            position: relative;
+            padding: 85px 20px;
+            text-align: center;
+            background: var(--green);
+            color: var(--cream);
+        }
+
+        .cta .eyebrow {
+            color: #d7bb80;
+        }
+
+        .cta h2 {
+            font-size: clamp(35px, 5vw, 54px);
+            margin-bottom: 18px;
+        }
+
+        .cta p {
+            margin-bottom: 28px;
+            color: #d6dfd2;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        .cta .button {
+            background: var(--cream);
+            color: var(--green);
+        }
+
+        /* FOOTER */
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+            padding: 30px 7%;
+            background: #0c2919;
+            color: #e9e2d3;
+            font-size: 12px;
+        }
+
+        footer .logo {
+            color: var(--cream);
+            font-size: 29px;
+        }
+
+        footer p {
+            line-height: 1.8;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero-content {
+                padding: 55px 8%;
+            }
+
+            .hero, .hero-visual {
+                min-height: 510px;
+            }
+
+            .collection {
+                padding: 70px 6%;
+            }
+
+            .spice-image {
+                height: 230px;
+            }
+
+            .story-content {
+                padding: 45px 9%;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+                padding: 18px 6%;
+                gap: 18px;
+            }
+
+            .logo {
+                font-size: 31px;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: space-between;
+                gap: 8px;
+                font-size: 11px;
+            }
+
+            .nav-button {
+                padding: 10px 13px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 53px 7% 42px;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .hero-content > p {
+                font-size: 14px;
+            }
+
+            .hero-visual {
+                min-height: 370px;
+            }
+
+            .image-label {
+                right: 6%;
+                bottom: 20px;
+                width: 185px;
+                padding: 18px;
+            }
+
+            .values {
+                grid-template-columns: 1fr;
+                padding: 23px 8%;
+                gap: 18px;
+            }
+
+            .value {
+                justify-content: flex-start;
+            }
+
+            .collection {
+                padding: 65px 7%;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading h2 {
+                margin-bottom: 18px;
+            }
+
+            .spice-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .spice-image {
+                height: 300px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image {
+                min-height: 290px;
+            }
+
+            .story-content {
+                padding: 45px 7%;
+            }
+
+            .cta {
+                padding: 65px 7%;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#home" class="logo">
+            Kera
+            <small>THE SPICE SOUL OF KERALA</small>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#collection">Our Spices</a>
+            <a href="#story">Our Story</a>
+            <a href="#collection" class="nav-button">Explore ↗</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PRODUCT INTRODUCTION -->
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="eyebrow">From Kerala, with flavour</div>
+
+                <h1>A world of<br>flavour. <span>From home.</span></h1>
+
+                <p>
+                    From the bold warmth of Malabar pepper
+                    to the sweet fragrance of cardamom,
+                    discover the spices that give Kerala
+                    its unmistakable character.
+                </p>
+
+                <a href="#collection" class="button">
+                    Explore Our Spices ↗
+                </a>
+
+                <div class="hero-note">
+                    KERALA ROOTS / RICH AROMA / TIMELESS FLAVOUR
+                </div>
+            </div>
+
+            <div class="hero-visual"
+                 role="img"
+                 aria-label="An assortment of aromatic spices">
+
+                <div class="image-label">
+                    <span>THE ESSENCE OF MALABAR</span>
+                    <h3>Kera Spices</h3>
+                    <p>
+                        Bold aromas. Deep flavours.
+                        A tradition worth sharing.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRAND VALUES -->
+
+        <section class="values">
+            <div class="value">
+                <span class="value-icon">🌿</span>
+                <div>
+                    <strong>Inspired by Nature</strong>
+                    The richness of Kerala
+                </div>
+            </div>
+
+            <div class="value">
+                <span class="value-icon">🌶️</span>
+                <div>
+                    <strong>Full of Flavour</strong>
+                    A world of aromas
+                </div>
+            </div>
+
+            <div class="value">
+                <span class="value-icon">🌴</span>
+                <div>
+                    <strong>Rooted in Tradition</strong>
+                    Inspired by Malabar
+                </div>
+            </div>
+        </section>
+
+        <!-- SPICE COLLECTION -->
+
+        <section class="collection" id="collection">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">The Kera collection</div>
+                    <h2>Small spices.<br>Extraordinary flavour.</h2>
+                </div>
+
+                <p>
+                    Meet the familiar ingredients behind
+                    unforgettable curries, comforting chai
+                    and the distinctive flavours of
+                    kitchens across Kerala.
+                </p>
+            </div>
+
+            <div class="spice-grid">
+
+                <article class="spice-card">
+                    <div class="spice-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=85"
+                            alt="Black peppercorns"
+                            loading="lazy">
+                    </div>
+
+                    <div class="spice-info">
+                        <span>01 / The bold one</span>
+                        <h3>Malabar Pepper</h3>
+                        <p>
+                            Deep, warming and wonderfully
+                            aromatic. A classic ingredient
+                            for everyday cooking.
+                        </p>
+                        <a class="spice-link" href="#shop">
+                            Discover pepper ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="spice-card">
+                    <div class="spice-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=85"
+                            alt="Aromatic spices and seasonings"
+                            loading="lazy">
+                    </div>
+
+                    <div class="spice-info">
+                        <span>02 / The fragrant one</span>
+                        <h3>Green Cardamom</h3>
+                        <p>
+                            Delicately sweet and refreshing,
+                            bringing a fragrant finish to
+                            chai and special recipes.
+                        </p>
+                        <a class="spice-link" href="#shop">
+                            Discover cardamom ↗
+                        </a>
+                    </div>
+                </article>
+
+                <article class="spice-card">
+                    <div class="spice-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1615485500704-8e990f9900f4?auto=format&fit=crop&w=800&q=85"
+                            alt="Warm brown spices"
+                            loading="lazy">
+                    </div>
+
+                    <div class="spice-info">
+                        <span>03 / The warming one</span>
+                        <h3>Kerala Cinnamon</h3>
+                        <p>
+                            Warm, sweet and comforting,
+                            perfect for aromatic rice,
+                            desserts and slow-cooked dishes.
+                        </p>
+                        <a class="spice-link" href="#shop">
+                            Discover cinnamon ↗
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- OUR STORY -->
+
+        <section class="story" id="story">
+            <div class="story-image"
+                 role="img"
+                 aria-label="Lush green landscape inspired by Kerala"></div>
+
+            <div class="story-content">
+                <div class="eyebrow">Our roots, our story</div>
+
+                <h2>Every spice<br>has a story.</h2>
+
+                <p>
+                    Kerala has long been celebrated for its
+                    spice-growing heritage and its place in
+                    the history of global trade. From the
+                    landscapes of the Western Ghats to the
+                    kitchens where recipes pass from one
+                    generation to the next, spices are part
+                    of our identity.
+                </p>
+
+                <p>
+                    Kera celebrates this heritage with a
+                    modern approach to discovering the
+                    colours, flavours and aromas of our land.
+                </p>
+
+                <a href="#collection" class="button">
+                    Discover Our Collection ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+
+        <section class="cta" id="shop">
+            <div class="eyebrow">Bring home the taste of Kerala</div>
+
+            <h2>Let flavour tell the story.</h2>
+
+            <p>
+                Explore the world of Kera spices.<br>
+                Inspired by our land. Made for your kitchen.
+            </p>
+
+            <a href="mailto:hello@kera.example?subject=Kera%20Spice%20Enquiry"
+               class="button">
+                Enquire About Our Spices ↗
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="#home" class="logo">
+            Kera
+            <small>THE SPICE SOUL OF KERALA</small>
+        </a>
+
+        <p>Inspired by Kerala. Created for flavour.</p>
+
+        <p>© 2026 Kera. Concept brand.</p>
+    </footer>
+
+</body>
+</html>
